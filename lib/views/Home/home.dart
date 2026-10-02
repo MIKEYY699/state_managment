@@ -10,44 +10,21 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    NumberController numberController = Get.put(NumberController());
+    NumberController controller = Get.put(NumberController());
 
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            onPressed: () {
-              Get.snackbar("title", "message");
-            },
-            child: Text("SnackBar"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              numberController.increase();
-            },
-            child: Icon(Icons.add),
-          ),
-          Obx(() => Text(numberController.n.toString())),
-
-          ElevatedButton(
-            onPressed: () {
-              numberController.decrease();
-            },
-            child: Icon(Icons.remove),
-          ),
-        ],
-      ),
+      body: Obx(() => controller.screens[controller.currentIndex.value]),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: controller.changeScreen,
+        currentIndex: controller.currentIndex.value,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'HOme'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'FAvourites',
+            label: 'Favourites',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.share), label: 'Share'),
         ],
-        
       ),
     );
   }
