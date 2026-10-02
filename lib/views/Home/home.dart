@@ -17,6 +17,9 @@ class MyHomePage extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         onTap: controller.changeScreen,
         currentIndex: controller.currentIndex.value,
+        selectedItemColor: Colors.blue,
+
+        unselectedItemColor: Colors.amberAccent,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
