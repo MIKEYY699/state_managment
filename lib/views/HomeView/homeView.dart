@@ -8,8 +8,8 @@ class Homeview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<NumberController>();
-    final controller1 = Get.put<UiController>(UiController());
+    // final controller = Get.find<NumberController>();
+    final controller1 = Get.find<UiController>();
 
     return Padding(
       padding: const EdgeInsets.all(18),
@@ -126,7 +126,7 @@ class Homeview extends StatelessWidget {
           Text('Reviews', style: TextStyle(fontSize: 20)),
           SizedBox(height: 10),
           ListView.builder(
-            itemCount: controller1.reviews.length,
+            itemCount: controller1.review.length,
             itemBuilder: (context, index) {
               return Container(
                 margin: EdgeInsets.only(bottom: 12),
@@ -140,13 +140,22 @@ class Homeview extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(radius: 20
-                        AssetImage(controller1.revews[index].image ?? ""),),
-                        SizedBox(width: 10,),
-                        Column(children: [Text(controller1.reviews[index].name??''), Text(controller1.reviews[index].time??'')],)
+                        CircleAvatar(
+                          radius: 20,
+                          child: Image.asset(
+                            controller1.review[index].image ?? "",
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Column(
+                          children: [
+                            Text(controller1.review[index].name ?? ''),
+                            Text(controller1.review[index].time ?? ''),
+                          ],
+                        ),
                       ],
                     ),
-                    Text(controller1.reviews[index].discription),
+                    Text(controller1.review[index].discription ?? ""),
                   ],
                 ),
               );

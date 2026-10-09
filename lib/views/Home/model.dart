@@ -6,12 +6,6 @@ class User {
   User({this.name, this.number, this.id});
 }
 
-
-
-
-
-
-
 class ShowRoom {
   String? name;
   String? image;
@@ -25,21 +19,22 @@ class Services {
   String? time;
   String? discription;
   String? price;
-  Services({this.name, this. time, this.discription, this.price});
+  Services({this.name, this.time, this.discription, this.price});
 }
 
-class About{
+class About {
   String? discription;
   String? location;
-  String?time;
+  String? time;
   String? number;
-  About({this.discription, this.location, this.time,this.number});
+  About({this.discription, this.location, this.time, this.number});
 }
 
-class Reviews{
+class Reviews {
   String? image;
   String? name;
   double? ratting;
   String? time;
-  String?discription;
+  String? discription;
+  Reviews({this.image, this.name, this.ratting, this.time, this.discription});
 }

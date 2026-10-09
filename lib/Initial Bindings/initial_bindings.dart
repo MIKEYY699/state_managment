@@ -5,6 +5,6 @@ class InitialBindings extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<NumberController>(() => NumberController());
-    
+    Get.lazyPut<UiController>(() => UiController());
   }
 }
