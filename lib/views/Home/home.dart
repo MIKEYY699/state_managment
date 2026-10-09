@@ -13,6 +13,8 @@ class MyHomePage extends StatelessWidget {
     NumberController controller = Get.put(NumberController());
 
     return Scaffold(
+      appBar: AppBar(title: Text('Vendor Profile'), centerTitle: true),
+      
       body: Obx(() => controller.screens[controller.currentIndex.value]),
       bottomNavigationBar: BottomNavigationBar(
         onTap: controller.changeScreen,
