@@ -24,7 +24,7 @@ class Homeview extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                    image: AssetImage(controller1.showroom[0].image ?? ''),
+                    image: AssetImage(controller1.showroom.image ?? ''),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -33,9 +33,9 @@ class Homeview extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(controller1.showroom[0].name ?? ""),
-                  Text(controller1.showroom[0].ratting.toString()),
-                  Text(controller1.showroom[0].distance ?? ''),
+                  Text(controller1.showroom.name ?? ""),
+                  Text(controller1.showroom.ratting.toString()),
+                  Text(controller1.showroom.distance ?? ''),
                 ],
               ),
               SizedBox(width: 120),
@@ -43,7 +43,10 @@ class Homeview extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10),
-          Text("Services", style: TextStyle(fontSize: 20)),
+          Text(
+            "Services",
+            style: TextStyle(fontSize: 20, fontFamily: 'urbanist'),
+          ),
           SizedBox(height: 10),
           SizedBox(
             height: 130,

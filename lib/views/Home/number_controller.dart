@@ -35,26 +35,12 @@ class NumberController extends GetxController {
 
 ///////////////////////////////////////////////////////
 class UiController extends GetxController {
-  RxList<ShowRoom> showroom = [
-    ShowRoom(
-      name: 'Ismails Showroom ',
-      image: 'assets/images/image.png',
-      ratting: 3.4,
-      distance: '4 Km Away',
-    ),
-    ShowRoom(
-      name: ' Showroom ',
-      image: 'assets/images/image.png',
-      ratting: 3.4,
-      distance: '4 Km Away',
-    ),
-    ShowRoom(
-      name: 'Zain Showroom ',
-      image: 'assets/images/image.png',
-      ratting: 3.4,
-      distance: '4 Km Away',
-    ),
-  ].obs;
+  final showroom = ShowRoom(
+    name: 'Ismails Showroom ',
+    image: 'assets/images/image.png',
+    ratting: 3.4,
+    distance: '4 Km Away',
+  );
 
   RxList<Services> services = [
     Services(
