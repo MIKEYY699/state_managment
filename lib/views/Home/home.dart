@@ -1,20 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/route_manager.dart';
+import 'package:state_managment/ui/auth/login_screen.dart';
 import 'package:state_managment/views/Home/number_controller.dart';
 import 'package:state_managment/views/favorites/favorites.dart';
 
 class MyHomePage extends StatelessWidget {
-  const new({super.key});
+  new({super.key});
+  final auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
     NumberController controller = Get.put(NumberController());
 
     return Scaffold(
-      appBar: AppBar(title: Text('Vendor Profile'), centerTitle: true),
-      
+      appBar: AppBar(
+        title: Text('Vendor Profile'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              auth.signOut().then((value) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              });
+            },
+            icon: Icon(Icons.logout_outlined),
+          ),
+        ],
+      ),
+
       body: Obx(() => controller.screens[controller.currentIndex.value]),
       bottomNavigationBar: BottomNavigationBar(
         onTap: controller.changeScreen,

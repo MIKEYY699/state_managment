@@ -62,35 +62,30 @@ class UiController extends GetxController {
       price: '120 KWD',
     ),
     Services(
-      name: 'Paint Protection Film',
+      name: 'Paint  Film',
       time: '3hr',
       discription: 'Clear film protection fro high impact areas',
       price: '120 KWD',
     ),
   ].obs;
 
-  RxList<About> about = [
+  final about = 
     About(
       discription: 'Premium Auto Care has been serving the community for over 5 years with professional car protection and detailing services. We use only the highest quality products and certified techniques.',
       location: '123 Main Street, Downtown',
       time: '12PM Monday',
       number: '030303030303',
-    ),
-    About(
-      discription: 'Premium Auto Care has been serving the community for over 5 years with professional car protection and detailing services. We use only the highest quality products and certified techniques.',
-      location: '123 Main Street, Downtown',
-      time: '12PM Monday',
-      number: '030303030303',
-    ),
-    About(
-      discription: 'Premium Auto Care has been serving the community for over 5 years with professional car protection and detailing services. We use only the highest quality products and certified techniques.',
-      location: '123 Main Street, Downtown',
-      time: '12PM Monday',
-      number: '030303030303',
-    ),
-  ].obs;
+    );
+  
 
   List<Reviews> review = [
+    Reviews(
+      image: 'assets/images/image.png',
+      name: 'Ismail',
+      ratting: 7.7,
+      time: '',
+      discription: 'Excellent ceramic coating service! The team was professional and the results exceeded my expectations.',
+    ),
     Reviews(
       image: 'assets/images/image.png',
       name: 'Ismail',
