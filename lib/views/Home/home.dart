@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/route_manager.dart';
-import 'package:state_managment/ui/auth/login_screen.dart';
+
 import 'package:state_managment/views/Home/number_controller.dart';
-import 'package:state_managment/views/favorites/favorites.dart';
 
 class MyHomePage extends StatelessWidget {
   new({super.key});
@@ -25,7 +24,7 @@ class MyHomePage extends StatelessWidget {
               auth.signOut().then((value) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  MaterialPageRoute(builder: (context) => FlutterLogo()),
                 );
               });
             },

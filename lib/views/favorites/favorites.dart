@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:state_managment/ui/auth/posts/add_posts.dart';
 
 class FavoritesPage extends StatelessWidget {
   const new({super.key});
@@ -12,7 +11,7 @@ class FavoritesPage extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => AddPosts()),
+            MaterialPageRoute(builder: (context) => FlutterLogo()),
           );
         },
         child: Icon(Icons.add),
