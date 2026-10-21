@@ -42,7 +42,7 @@ class FirebaseLoginScreen extends StatelessWidget {
                   title: 'Login',
                   onTap: () {
                     controller.login();
-                    Get.offAll(()=>Homeview());
+                    Get.offAll(() => Homeview());
                   },
                 ),
                 Row(

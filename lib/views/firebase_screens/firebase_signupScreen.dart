@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:state_managment/views/HomeView/homeView.dart';
 import 'package:state_managment/views/firebase_screens/firebase_controller.dart';
 import 'package:state_managment/views/firebase_screens/firebase_loginScreen.dart';
 import 'package:state_managment/widgets/round_button.dart';
@@ -40,7 +41,7 @@ class FirebaseSignupscreen extends StatelessWidget {
                 title: 'SignUp',
                 onTap: () {
                   controller.signup();
-                  Get.to(()=> FirebaseLoginScreen());
+                  Get.to(() => Homeview());
                 },
               ),
               Row(

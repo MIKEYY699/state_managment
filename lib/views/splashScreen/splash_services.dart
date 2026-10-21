@@ -9,13 +9,8 @@ import 'package:state_managment/views/HomeView/homeView.dart';
 import 'package:state_managment/views/firebase_screens/firebase_loginScreen.dart';
 import 'package:state_managment/views/login/Login_sceeen.dart';
 
-class SplashServices extends GetxController {
+class SplashServices {
   final auth = FirebaseAuth.instance;
-  @override
-  void onReady() {
-    super.onReady();
-    isLogin();
-  }
 
   void isLogin() {
     final user = auth.currentUser;
