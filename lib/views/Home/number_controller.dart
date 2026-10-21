@@ -31,10 +31,19 @@ class NumberController extends GetxController {
     User(name: 'Hzaifa', number: 030303030303, id: 111),
     User(name: 'Sufiyan', number: 030303030303, id: 111),
   ].obs;
+
+  
 }
+
+
 
 ///////////////////////////////////////////////////////
 class UiController extends GetxController {
+
+
+var text="Welcome to firebase".obs;
+
+
   final showroom = ShowRoom(
     name: 'Ismails Showroom ',
     image: 'assets/images/image.png',

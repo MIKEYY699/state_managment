@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:state_managment/Initial%20Bindings/initial_bindings.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:state_managment/views/splashScreen/splash_screen.dart';
 
 import 'firebase_options.dart';
 
@@ -26,10 +27,12 @@ class MyApp extends StatelessWidget {
         MediaQuery.of(context).size.width,
         MediaQuery.of(context).size.height,
       ),
-      child: GetMaterialApp(
-        initialBinding: InitialBindings(),
-        //  home: ,
-      ),
+      builder: (context, child) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          initialBinding: InitialBindings(),
+          home:  SplashScreen(), 
+        );}
     );
   }
 }
