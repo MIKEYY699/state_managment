@@ -13,6 +13,18 @@ class FirebaseController extends GetxController {
 
   void login() async {
     try {
+      await auth.signInWithEmailAndPassword(
+        email: email.text,
+        password: password.text,
+      );
+      
+    } catch (error) {
+      log(error.toString());
+    }
+  }
+
+  void signup() async {
+    try {
       await auth.createUserWithEmailAndPassword(
         email: email.text,
         password: password.text,

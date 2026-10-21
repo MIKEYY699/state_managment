@@ -6,15 +6,11 @@ import 'package:state_managment/views/Home/number_controller.dart';
 import 'package:state_managment/views/splashScreen/splash_services.dart';
 
 class SplashScreen extends StatelessWidget {
-  final UiController controller1 = Get.put(UiController());
-
-
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller1 = Get.find<UiController>();
-    return Scaffold(
-      body: Center(child: Obx(() => Text(controller1.text.value))),
-    );
+    final controller = Get.put(SplashServices());
+    return Scaffold(body: Center(child: Text('Welcome ')));
   }
 }

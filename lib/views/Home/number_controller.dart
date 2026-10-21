@@ -41,7 +41,7 @@ class NumberController extends GetxController {
 class UiController extends GetxController {
 
 
-var text="Welcome to firebase".obs;
+
 
 
   final showroom = ShowRoom(
