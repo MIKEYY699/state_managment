@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:state_managment/views/favorites/add_fav_posts.dart';
 
 class FavoritesPage extends StatelessWidget {
   const new({super.key});
@@ -6,13 +8,13 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('FAvourite '), centerTitle: true),
+
+      appBar: AppBar(title: Text('Favorites ')),
       body: FloatingActionButton(
+        
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => FlutterLogo()),
-          );
+          Get.to(()=>AddFavPosts());
+         
         },
         child: Icon(Icons.add),
       ),

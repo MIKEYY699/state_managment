@@ -5,6 +5,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/route_manager.dart';
 
 import 'package:state_managment/views/Home/number_controller.dart';
+import 'package:state_managment/views/firebase_screens/firebase_controller.dart';
 
 class MyHomePage extends StatelessWidget {
   new({super.key});
@@ -13,6 +14,8 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     NumberController controller = Get.put(NumberController());
+    final controller2 = Get.put(FirebaseController());
+
 
     return Scaffold(
       appBar: AppBar(
@@ -21,12 +24,7 @@ class MyHomePage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              auth.signOut().then((value) {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FlutterLogo()),
-                );
-              });
+              controller2.logout();
             },
             icon: Icon(Icons.logout_outlined),
           ),

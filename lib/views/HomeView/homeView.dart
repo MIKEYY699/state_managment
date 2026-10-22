@@ -9,9 +9,10 @@ class Homeview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final controller = Get.find<NumberController>();
-    final controller1 = Get.find<UiController>();
+    final controller1 = Get.put(UiController());
 
     return Scaffold(
+
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18),
         child: SingleChildScrollView(

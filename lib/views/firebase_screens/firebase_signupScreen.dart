@@ -14,7 +14,7 @@ class FirebaseSignupscreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('SignUp'), centerTitle: true),
       body: Form(
-        key: controller.formKey,
+        key: controller.key,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
@@ -41,7 +41,13 @@ class FirebaseSignupscreen extends StatelessWidget {
                 title: 'SignUp',
                 onTap: () {
                   controller.signup();
-                  Get.to(() => Homeview());
+                  Get.to(() => FirebaseLoginScreen());
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Account has created"),
+                      backgroundColor: Colors.green,
+                    ),
+                  );
                 },
               ),
               Row(

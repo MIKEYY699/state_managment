@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:state_managment/views/Home/home.dart';
 import 'package:state_managment/views/HomeView/homeView.dart';
 import 'package:state_managment/views/firebase_screens/firebase_controller.dart';
 import 'package:state_managment/views/firebase_screens/firebase_signupScreen.dart';
@@ -42,7 +43,12 @@ class FirebaseLoginScreen extends StatelessWidget {
                   title: 'Login',
                   onTap: () {
                     controller.login();
-                    Get.offAll(() => Homeview());
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text("Login Successfully.."),
+                        backgroundColor: Colors.green,
+                      ),
+                    );
                   },
                 ),
                 Row(

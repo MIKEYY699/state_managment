@@ -8,16 +8,17 @@ import 'package:state_managment/views/splashScreen/splash_services.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
-  void initState() {
-    SplashServices().isLogin();
-  }
-
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    super.initState();
+    SplashServices().isLogin();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Center(child: Text('Welcome ')));
