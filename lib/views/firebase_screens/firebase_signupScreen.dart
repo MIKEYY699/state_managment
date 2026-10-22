@@ -23,6 +23,7 @@ class FirebaseSignupscreen extends StatelessWidget {
             children: [
               TextFormField(
                 controller: controller.email,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   hintText: 'Email',
                   prefixIcon: Icon(Icons.email_outlined),
@@ -30,6 +31,7 @@ class FirebaseSignupscreen extends StatelessWidget {
               ),
               TextFormField(
                 controller: controller.password,
+                obscureText: true,
                 decoration: InputDecoration(
                   hintText: "password",
                   prefixIcon: Icon(Icons.lock),
@@ -41,13 +43,6 @@ class FirebaseSignupscreen extends StatelessWidget {
                 title: 'SignUp',
                 onTap: () {
                   controller.signup();
-                  Get.to(() => FirebaseLoginScreen());
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text("Account has created"),
-                      backgroundColor: Colors.green,
-                    ),
-                  );
                 },
               ),
               Row(
