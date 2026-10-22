@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -14,6 +14,16 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   log('Firebase connected successfully!');
+  try {
+    final notificationSettings = await FirebaseMessaging.instance
+        .requestPermission(alert: true, badge: true, sound: true);
+    log('Notification permission: ${notificationSettings.authorizationStatus}');
+
+    final fcmToken = await FirebaseMessaging.instance.getToken();
+    log('FCM token: $fcmToken');
+  } catch (error, stackTrace) {
+    log('Failed to retrieve FCM token', error: error, stackTrace: stackTrace);
+  }
 
   //////////////////////////
   runApp(const MyApp());
